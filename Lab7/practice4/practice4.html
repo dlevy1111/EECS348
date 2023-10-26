@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>EECS 348 LAB 7 Problem 4</h1>
+        <form  method="post">
+            <label for="number">Size of multiplication table: </label>
+            <input type="text" name="number" id="number" required>
+            <br>
+            <input type="submit">
+            <br>
+            <table align = "left" border = "1">
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST"){ 
+                    $x = 0;
+                    $max = $_POST["number"];
+                    while($x <= $max){
+                        $y = 0;
+                        echo "<tr>";
+                        while($y <= $max){
+                            if ($x == 0 && $y == 0){
+                                echo "<td> </td>";
+                            }
+                            else if ($x == 0){
+                                echo "<td>".$y."</td>";
+                            }
+                            else if ($y == 0){
+                                echo "<td>".$x."</td>";
+                            }
+                            else {
+                                echo "<td>".$x*$y."</td>";
+                            }
+                            $y++;
+                        }
+                        echo "</tr>";
+                    $x++;
+                    }
+                }
+            ?>
+            
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
