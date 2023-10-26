@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>EECS 348 Lab 7 Problem 2</h1>
+
+        <p id="box" style="border:5px solid black;">Alter me</p>
+        <p>Change border color:</p><input id="bordercolor" type="color" >
+
+        <p>Change border width:</p><input id="borderwidth" type="number" min="0" value=5>
+
+        <p>Change box color:</p><input id="boxcolor" type="color" value="#ffffff">
+
+        <p><br></p>
+        <button id="make_changes" onclick="makeChanges()">Make changes</button>
+    </div>
+    <script>
+        let box = document.getElementById("box")
+        let border_color = document.getElementById("bordercolor")
+        let border_width = document.getElementById("borderwidth")
+        let box_color = document.getElementById("boxcolor")
+        let button = document.getElementById("make_changes")
+        
+
+        function makeChanges(){
+            box.style.background = box_color.value
+            box.style.borderWidth = border_width.value + "px"
+            box.style.borderColor = border_color.value
+            console.log("borderwidth number = ", box.style.borderWidth)
+        }
+    </script>
+</body>
+</html>
