@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>EECS 348 LAB 7 Problem 3</h1>
+        <form>
+            First password: <input id="pass1" type="text">
+        </form>
+        <form> 
+            Second password: <input id="pass2" type="text">
+        </form>
+        
+        <button onclick="checkPass()">Check the passwords</button>
+    </div>
+    <script>
+        function checkPass(){
+            Password1 = document.getElementById("pass1").value
+            Password2 = document.getElementById("pass2").value
+            if (Password1.length < 8)
+                alert("Password 1 is too short!")
+            else if (Password2.length < 8)
+                alert("Password 2 is too short!")
+            else if (Password1 != Password2)
+                alert("The passwords do not match.")
+            else
+                alert("The passwords match")
+        }
+    </script>
+</body>
+</html>
